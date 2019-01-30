@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<style media="screen">
+  li { list-style-type: none; }
+</style>
+  <head>
+    <meta charset="utf-8">
+    <title>Memes</title>
+  </head>
+  <body>
+    <h1>Memes<h1>
+      <ul>
+        <% @memes.each do |meme| %>
+        <li><a href='/memes/<%= meme.id %>'>
+          <img src=<%= meme.link %> alt=<%= meme.caption %> style="padding:10px;" />
+        </a></li>
+        <% end %>
+      </ul>
+      <div>
+        <form action="/memes/new" method="GET">
+          <input type="submit" value="Create a New Meme">
+        </form>
+        </div>
+
+  </body>
+</html>

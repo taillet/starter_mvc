@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> <%= @meme.title %> </title>
+  </head>
+  <body>
+    <img src=<%= @meme.link %> alt=<%= @meme.caption %> />
+    <p> <%= @meme.caption %> </p>
+    <form action="/memes/<%= @meme.id %>/edit" method="get">
+      <input type="submit" value="Edit">
+    </form>
+    <form action="/memes/<%= @meme.id %>" method="POST">
+      <input id = "hidden" type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
+    <form action="/memes" method="get">
+      <input type="submit" value="Return to Memes">
+    </form>
+  </body>
+</html>
